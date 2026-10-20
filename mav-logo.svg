@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1500 450" role="img" aria-labelledby="title desc">
+  <title id="title">MAV Transport Solutions</title>
+  <desc id="desc">Navy MAV wordmark with a circular highway emblem.</desc>
+  <g fill="none" stroke="#071c3c" stroke-linecap="round" stroke-linejoin="round">
+    <circle cx="200" cy="200" r="181" stroke-width="16"/>
+    <path d="M58 307A157 157 0 1 1 347 126" stroke-width="12"/>
+    <path d="M55 247C120 180 217 139 381 135C283 145 178 194 114 287" stroke-width="17"/>
+    <path d="M105 331C122 248 219 172 381 136C291 169 223 237 199 332" stroke-width="18"/>
+    <path d="M180 362C150 277 238 179 381 136" stroke-width="17" stroke-dasharray="31 24"/>
+    <path d="M289 314C254 277 258 238 278 206" stroke-width="10"/>
+  </g>
+  <g fill="#071c3c" stroke="#8190a5" stroke-width="2">
+    <path d="M438 94h87l91 116 91-116h82v277h-82V213l-91 111-91-111v158h-87z"/>
+    <path d="M814 371 923 94h90l109 277h-88l-21-61h-92l-21 61zm130-127h48l-24-71z"/>
+    <path d="M1080 94h91l58 172 59-172h91l-105 277h-91z"/>
+  </g>
+  <text x="440" y="420" fill="#071c3c" font-family="Montserrat, Arial, sans-serif" font-size="48" font-weight="700" letter-spacing="15" textLength="1050" lengthAdjust="spacingAndGlyphs">TRANSPORT SOLUTIONS</text>
+</svg>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | MAV Transport Solutions</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables */
+        :root {
+            --bg-dark: #050a14;
+            --bg-card: #0d1424;
+            --gold: #d4a373;
+            --gold-hover: #c29262;
+            --white: #ffffff;
+            --text-light: #b3b8c2;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-dark);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background-color: var(--gold);
+            color: #000;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-family: var(--font-body);
+            transition: background 0.3s ease, transform 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--gold-hover);
+            transform: translateY(-2px);
+        }
+
+        /* --- Navigation --- */
+        header {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 20px 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .brand-logo {
+            display: inline-flex;
+            align-items: center;
+            padding: 5px 9px;
+            border-radius: 4px;
+            background: #fff;
+        }
+
+        .brand-logo img {
+            display: block;
+            width: 205px;
+            height: auto;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--gold);
+        }
+
+        .menu-toggle {
+            display: none;
+            width: 44px;
+            height: 44px;
+            border: 1px solid rgba(255,255,255,.18);
+            border-radius: 4px;
+            background: transparent;
+            color: #fff;
+            font-size: 21px;
+            cursor: pointer;
+        }
+
+        /* --- Contact Hero Section --- */
+        .contact-hero {
+            padding: 180px 0 100px 0;
+        }
+
+        .contact-grid {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .contact-text {
+            flex: 1;
+        }
+
+        .contact-text h1 {
+            font-size: 4rem;
+            color: var(--gold);
+            margin-bottom: 25px;
+        }
+
+        .contact-text p {
+            font-size: 1.2rem;
+            color: var(--white);
+            line-height: 1.8;
+            max-width: 90%;
+        }
+
+        .contact-image {
+            flex: 1;
+            height: 550px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .contact-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* --- Contact Details Section --- */
+        .contact-details-section {
+            padding: 40px 0 120px 0;
+        }
+
+        .details-grid {
+            display: flex;
+            align-items: center;
+            gap: 80px;
+        }
+
+        .details-image {
+            flex: 1;
+            height: 400px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .details-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .details-text {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .details-text p {
+            font-size: 1.1rem;
+            color: var(--white);
+        }
+
+        .details-text strong {
+            font-weight: 600;
+            color: var(--white);
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #000000;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-col p {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-light);
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--gold);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: var(--gold);
+            font-size: 18px;
+        }
+
+        .footer-bottom {
+            text-align: left;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .contact-grid, .details-grid {
+                flex-direction: column;
+                gap: 40px;
+            }
+            .contact-image, .details-image {
+                width: 100%;
+                height: 350px;
+            }
+            .contact-text h1 {
+                font-size: 2.8rem;
+            }
+            .contact-text p {
+                max-width: 100%;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-container { gap: 12px; }
+            .brand-logo img { width: 165px; }
+            .menu-toggle { display: inline-grid; place-items: center; margin-left: auto; }
+            .nav-links { display: none; position: absolute; inset: 100% 0 auto; padding: 12px 5% 20px; flex-direction: column; gap: 0; background: #03060c; }
+            .nav-links.is-open { display: flex; }
+            .nav-links a { padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,.1); }
+            .nav-container > .btn { display: none; }
+            .contact-hero { padding-top: 120px; }
+            .contact-details-section { padding-bottom: 72px; }
+        }
+
+        /* Shared site chrome */
+        :root {
+            --bg-dark: #07111f;
+            --bg-card: #101d2d;
+            --gold: #d8b27c;
+            --gold-hover: #c89d60;
+            --text-light: #bdc6d1;
+            --text-muted: #8d99a8;
+            --line: rgba(255, 255, 255, .12);
+        }
+
+        html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+        :focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+        header {
+            position: fixed;
+            inset: 0 0 auto;
+            padding: 12px 0;
+            background: rgba(7, 17, 31, .9);
+            border-bottom: 1px solid var(--line);
+            backdrop-filter: blur(16px);
+        }
+        .nav-container { gap: 24px; }
+        .nav-links { align-items: center; gap: 28px; }
+        .nav-links a { color: #e4e8ed; font-size: 13px; }
+        .nav-links a:hover, .nav-links a.active { color: var(--gold); }
+        .contact-hero { padding-top: 150px; }
+        .footer-brand img { width: 250px; }
+        .footer-col h2 { margin-bottom: 18px; font: 600 15px var(--font-body); }
+        .footer-col p { color: var(--text-muted); }
+        .footer-col ul { list-style: none; }
+        .footer-col ul li a, .footer-contact-link { color: var(--text-light); font-size: 14px; }
+        .footer-bottom { color: var(--text-muted); font-size: 12px; }
+
+        @media (max-width: 900px) {
+            .nav-container { gap: 14px; }
+            .brand-logo img { width: 175px; }
+            .nav-links { gap: 12px; }
+        }
+
+        @media (max-width: 768px) {
+            html { scroll-padding-top: 82px; }
+            .brand-logo img { width: 155px; }
+            .contact-hero { padding-top: 115px; }
+            .footer-brand img { width: 225px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <a href="index.html#home" class="brand-logo" aria-label="MAV Transport Solutions home">
+                <img src="mav-logo.svg" alt="MAV Transport Solutions">
+            </a>
+            <nav class="nav-links" id="primary-navigation" aria-label="Main navigation">
+                <a href="index.html#home">Home</a>
+                <a href="services.html">Our Services</a>
+                <a href="story.html">Our Story</a>
+                <a href="contact.html" class="active" aria-current="page">Contact Us</a>
+            </nav>
+            <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">☰</button>
+            <a href="#contact-details" class="btn">Book Today</a>
+        </div>
+    </header>
+
+    <!-- Contact Hero Section -->
+    <section class="contact-hero">
+        <div class="container contact-grid">
+            <!-- Left Side: Text -->
+            <div class="contact-text">
+                <h1>Contact Us</h1>
+                <p>We would love to hear from you.<br>Feel free to reach out using the below details.</p>
+            </div>
+            
+            <!-- Right Side: Large Image -->
+            <div class="contact-image">
+                <!-- Replace URL with your own studio car image -->
+                <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&q=80&w=1000" alt="Luxury Cars in Studio">
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Details Section -->
+    <section class="contact-details-section">
+        <div class="container details-grid">
+            <!-- Left Side: Smaller Image -->
+            <div class="details-image">
+                <!-- Replace URL with your own reflective car lineup image -->
+                <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&q=80&w=1000" alt="MAV Transport Fleet">
+            </div>
+
+            <!-- Right Side: Information -->
+            <div class="details-text" id="contact-details">
+                <p><strong>Address:</strong> MENLO PARK, Pretoria Gauteng</p>
+                <p><strong>Hours:</strong> Mon-Fri 9:00AM – 5:00PM</p>
+                <p><strong>Phone:</strong> <a href="tel:+27810958129">081 095 8129</a></p>
+                <p><strong>Email:</strong> <a href="mailto:info@mavtransport.co.za">info@mavtransport.co.za</a></p>
+                <a class="btn" href="mailto:info@mavtransport.co.za?subject=Booking%20enquiry">Send a booking enquiry</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1 -->
+                <div class="footer-col">
+                    <a class="brand-logo footer-brand" href="index.html#home" aria-label="MAV Transport Solutions home" style="margin-bottom: 20px;">
+                        <img src="mav-logo.svg" alt="MAV Transport Solutions">
+                    </a>
+                    <p>Private hire and chauffeur services for airport transfers, executive journeys, and special occasions.</p>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="footer-col">
+                    <h2>Quick links</h2>
+                    <ul>
+                        <li><a href="index.html#home">Home</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="story.html">Our Story</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="footer-col">
+                    <h2>Get in touch</h2>
+                    <p><a class="footer-contact-link" href="mailto:info@mavtransport.co.za">info@mavtransport.co.za</a></p>
+                    <p><a class="footer-contact-link" href="tel:+27810958129">081 095 8129</a></p>
+                    
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>MAV Transport Solutions &copy; <span id="current-year">2026</span>. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const menuButton = document.querySelector('.menu-toggle');
+        const navigation = document.querySelector('#primary-navigation');
+
+        menuButton.addEventListener('click', () => {
+            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+            menuButton.setAttribute('aria-expanded', String(!isExpanded));
+            menuButton.setAttribute('aria-label', isExpanded ? 'Open navigation menu' : 'Close navigation menu');
+            menuButton.textContent = isExpanded ? '☰' : '×';
+            navigation.classList.toggle('is-open', !isExpanded);
+        });
+
+        navigation.addEventListener('click', (event) => {
+            if (event.target.closest('a')) {
+                menuButton.setAttribute('aria-expanded', 'false');
+                menuButton.setAttribute('aria-label', 'Open navigation menu');
+                menuButton.textContent = '☰';
+                navigation.classList.remove('is-open');
+            }
+        });
+
+        document.querySelector('#current-year').textContent = new Date().getFullYear();
+    </script>
+</body>
+</html>

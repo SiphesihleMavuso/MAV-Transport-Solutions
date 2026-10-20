@@ -4,6 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MAV Transport Solutions | Luxury Travel</title>
+    <meta name="description" content="Private luxury car hire and chauffeur services from MAV Transport Solutions. Enquire about airport transfers, events, and executive travel.">
+    <meta name="theme-color" content="#07111f">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
     <style>
         /* CSS Variables for easy color changes */
@@ -92,15 +96,23 @@
             align-items: center;
         }
 
-        .logo {
-            font-family: var(--font-heading);
-            font-size: 24px;
-            font-weight: 800;
-            letter-spacing: 1px;
+        .brand-logo {
+            display: inline-flex;
+            align-items: center;
+            flex: 0 0 auto;
+            padding: 5px 9px;
+            border-radius: 5px;
+            background: #fff;
         }
 
-        .logo span {
-            color: var(--gold);
+        .brand-logo img {
+            display: block;
+            width: 250px;
+            height: auto;
+        }
+
+        .footer-brand img {
+            width: 310px;
         }
 
         .nav-links {
@@ -348,6 +360,9 @@
         }
 
         @media (max-width: 768px) {
+            .brand-logo img {
+                width: 205px;
+            }
             .nav-links {
                 display: none; /* Add a JS menu toggle for production */
             }
@@ -358,6 +373,193 @@
                 font-size: 1.8rem;
             }
         }
+
+        /* Refined client-ready visual system and responsive interactions. */
+        :root {
+            --bg-dark: #07111f;
+            --bg-card: #101d2d;
+            --gold: #d8b27c;
+            --gold-hover: #c89d60;
+            --text-light: #bdc6d1;
+            --text-muted: #8d99a8;
+            --line: rgba(255, 255, 255, .12);
+        }
+
+        html { scroll-behavior: smooth; scroll-padding-top: 100px; }
+        body { line-height: 1.7; }
+        h1, h2, h3 { line-height: 1.2; }
+        img { max-width: 100%; }
+        :focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+
+        .container { width: min(90%, 1200px); }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 50px;
+            padding: 12px 24px;
+            border: 1px solid transparent;
+            border-radius: 4px;
+            background: var(--gold);
+            color: #111820;
+            font-size: 14px;
+            letter-spacing: .02em;
+        }
+
+        .btn-outline { border-color: rgba(255,255,255,.55); background: transparent; color: #fff; }
+        .btn-outline:hover { background: #fff; color: #111820; }
+
+        header {
+            position: fixed;
+            inset: 0 0 auto;
+            padding: 12px 0;
+            background: rgba(7, 17, 31, .9);
+            border-bottom: 1px solid var(--line);
+            backdrop-filter: blur(16px);
+        }
+
+        .nav-container { gap: 24px; }
+        .brand-logo img { width: 205px; }
+        .footer-brand img { width: 250px; }
+        .nav-links { align-items: center; gap: 28px; }
+        .nav-links a { color: #e4e8ed; font-size: 13px; }
+        .nav-links a:hover { color: var(--gold); }
+
+        .menu-toggle {
+            display: none;
+            width: 46px;
+            height: 46px;
+            border: 1px solid var(--line);
+            border-radius: 4px;
+            background: transparent;
+            color: #fff;
+            font-size: 22px;
+            cursor: pointer;
+        }
+
+        .hero {
+            min-height: 760px;
+            height: min(100svh, 940px);
+            padding: 145px 0 88px;
+            background: linear-gradient(90deg, rgba(5,12,22,.94), rgba(5,12,22,.72) 48%, rgba(5,12,22,.18)), linear-gradient(0deg, rgba(5,12,22,.35), transparent 55%), url('https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&q=85&w=2200') center 55%/cover no-repeat;
+        }
+
+        .hero-content { max-width: 760px; }
+        .hero-eyebrow, .section-kicker {
+            display: block;
+            margin-bottom: 16px;
+            color: var(--gold);
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: .17em;
+            text-transform: uppercase;
+        }
+        .hero h1 { max-width: 740px; margin-bottom: 22px; font-size: clamp(3.2rem, 6.4vw, 5.6rem); letter-spacing: -.045em; }
+        .hero p { max-width: 600px; margin-bottom: 30px; color: #d3d9e1; font-size: clamp(16px, 1.5vw, 19px); }
+        .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+        .service-strip { padding: 26px 0; background: #0d1928; border-block: 1px solid var(--line); }
+        .service-strip-inner { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+        .service-item { display: flex; align-items: center; gap: 16px; padding: 4px 20px; border-right: 1px solid var(--line); }
+        .service-item:last-child { border-right: 0; }
+        .service-number { color: var(--gold); font: 700 13px var(--font-heading); }
+        .service-item h2 { margin-bottom: 2px; font: 600 15px var(--font-body); }
+        .service-item p { color: var(--text-muted); font-size: 12px; }
+
+        .fleet { padding: 100px 0; }
+        .section-header { display: flex; justify-content: space-between; align-items: end; gap: 30px; margin-bottom: 38px; }
+        .section-header h2, .about-text h2, .contact-heading h2 { margin-bottom: 10px; font-size: clamp(2rem, 4vw, 3rem); letter-spacing: -.035em; }
+        .section-header p, .section-intro { color: var(--text-light); }
+        .fleet-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+        .fleet-card { border: 1px solid var(--line); border-radius: 6px; transition: transform .25s ease, border-color .25s ease; }
+        .fleet-card:hover { transform: translateY(-5px); border-color: rgba(216,178,124,.55); }
+        .fleet-img { display: block; height: 230px; }
+        .fleet-info { padding: 23px; }
+        .fleet-info h3 { font-size: 19px; }
+        .fleet-info p { min-height: 48px; }
+        .fleet-detail { display: block; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--line); color: var(--gold); font-size: 12px; letter-spacing: .04em; }
+        .fleet-notes { margin: 26px 0; color: var(--text-muted); font-size: 13px; }
+
+        .about { padding: 100px 0; background: #0b1726; border-block: 1px solid var(--line); }
+        .about-container { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(36px, 7vw, 86px); }
+        .about-image { display: block; width: 100%; min-height: 460px; object-fit: cover; border-radius: 6px; }
+        .about-text p { margin: 20px 0; }
+        .about-text .btn { margin-top: 8px; }
+
+        .cta-banner { padding: 80px 20px; background: linear-gradient(125deg, #c89d60, #dfc493); }
+        .cta-banner h2 { max-width: 790px; color: #111820; font-size: clamp(1.9rem, 4vw, 3rem); }
+        .cta-banner .btn { background: #111820; color: #fff; }
+        .cta-banner .btn:hover { background: #253243; }
+
+        .contact-section { padding: 100px 0; background: #f4f1eb; color: #182332; }
+        .contact-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: clamp(40px, 8vw, 100px); }
+        .contact-heading h2 { color: #182332; }
+        .contact-heading > p { max-width: 420px; color: #566170; }
+        .contact-methods { display: grid; gap: 16px; margin-top: 34px; }
+        .contact-method { padding-bottom: 14px; border-bottom: 1px solid #d9d6cf; }
+        .contact-method span { display: block; color: #707987; font-size: 12px; letter-spacing: .1em; text-transform: uppercase; }
+        .contact-method a { font-weight: 600; }
+        .booking-form { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; padding: 30px; background: #fff; border: 1px solid #e0ddd7; border-radius: 6px; box-shadow: 0 18px 50px rgba(24,35,50,.08); }
+        .booking-form h3, .booking-form .form-note, .booking-form .form-submit { grid-column: 1 / -1; }
+        .booking-form h3 { font: 700 21px var(--font-heading); }
+        .booking-form label { display: grid; gap: 7px; color: #344152; font-size: 13px; font-weight: 600; }
+        .booking-form input, .booking-form select, .booking-form textarea { width: 100%; min-height: 46px; padding: 11px 12px; border: 1px solid #ccd1d6; border-radius: 3px; background: #fff; color: #182332; font: 400 14px var(--font-body); }
+        .booking-form textarea { min-height: 100px; resize: vertical; }
+        .booking-form .form-note { margin-top: -7px; color: #687383; font-size: 12px; }
+        .booking-form .form-submit { justify-self: start; }
+
+        .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; }
+        .footer-col h2 { margin-bottom: 18px; font: 600 15px var(--font-body); }
+        .footer-col p { color: var(--text-muted); }
+        .footer-col li a, .footer-contact-link { color: var(--text-light); font-size: 14px; }
+        .footer-bottom { color: var(--text-muted); font-size: 12px; }
+
+        @media (max-width: 900px) {
+            .brand-logo img { width: 175px; }
+            .nav-links { display: flex; gap: 16px; }
+            .nav-container > .btn { padding-inline: 16px; }
+            .fleet-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .about-container { gap: 36px; }
+            .about-image { min-height: 400px; }
+            .contact-grid { grid-template-columns: 1fr 1.2fr; gap: 36px; }
+        }
+
+        @media (max-width: 700px) {
+            html { scroll-padding-top: 82px; }
+            header { padding: 9px 0; }
+            .nav-container { gap: 12px; }
+            .brand-logo img { width: 155px; }
+            .menu-toggle { display: inline-grid; place-items: center; margin-left: auto; }
+            .nav-container > .btn { display: none; }
+            .nav-links { display: none; position: absolute; inset: calc(100% + 1px) 0 auto; padding: 14px 5% 22px; flex-direction: column; align-items: stretch; gap: 0; background: #07111f; border-bottom: 1px solid var(--line); }
+            .nav-links.is-open { display: flex; }
+            .nav-links a { padding: 12px 0; border-bottom: 1px solid var(--line); }
+            .nav-links a:last-child { border-bottom: 0; }
+            .hero { min-height: 690px; height: auto; padding: 140px 0 70px; background-position: 58% center; }
+            .hero h1 { font-size: clamp(2.75rem, 13vw, 4.2rem); }
+            .hero p { font-size: 16px; }
+            .service-strip-inner { grid-template-columns: 1fr; gap: 12px; }
+            .service-item { padding: 8px 0; border-right: 0; border-bottom: 1px solid var(--line); }
+            .service-item:last-child { border-bottom: 0; }
+            .fleet, .about, .contact-section { padding: 72px 0; }
+            .section-header { display: block; margin-bottom: 28px; }
+            .section-header .section-intro { margin-top: 12px; }
+            .fleet-grid { grid-template-columns: 1fr; }
+            .fleet-img { height: 235px; }
+            .about-container, .contact-grid { grid-template-columns: 1fr; }
+            .about-image { min-height: 300px; max-height: 380px; }
+            .cta-banner { padding: 65px 20px; }
+            .booking-form { grid-template-columns: 1fr; padding: 22px; }
+            .booking-form h3, .booking-form .form-note, .booking-form .form-submit { grid-column: auto; }
+            .footer-grid { grid-template-columns: 1fr; gap: 26px; }
+            .footer-brand img { width: 225px; }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            *, *::before, *::after { transition-duration: .01ms !important; }
+        }
     </style>
 </head>
 <body>
@@ -365,24 +567,38 @@
     <!-- Header & Navigation -->
     <header>
         <div class="container nav-container">
-            <div class="logo">MAV<span> Transport</span></div>
-            <nav class="nav-links">
+            <a class="brand-logo" href="#home" aria-label="MAV Transport Solutions home">
+                <img src="mav-logo.svg" alt="MAV Transport Solutions">
+            </a>
+            <nav class="nav-links" id="primary-navigation" aria-label="Main navigation">
                 <a href="#home">Home</a>
-                <a href="#fleet">Our Fleet</a>
-                <a href="#about">Our Story</a>
-                <a href="#contact">Contact Us</a>
+                <a href="services.html">Our Services</a>
+                <a href="story.html">Our Story</a>
+                <a href="contact.html">Contact Us</a>
             </nav>
-            <a href="#contact" class="btn">Book Today</a>
+            <button class="menu-toggle" type="button" aria-label="Open navigation menu" aria-expanded="false" aria-controls="primary-navigation">☰</button>
+            <a href="contact.html" class="btn">Book Today</a>
         </div>
     </header>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
         <div class="container hero-content">
-            <span class="hero-eyebrow">Luxury Travel. Unmatched Service.</span>
+            <span class="hero-eyebrow">Private travel, thoughtfully delivered</span>
             <h1>Luxury Transport,<br>Tailored to You.</h1>
-            <p>MAV Transport Solutions offers luxury car hire and chauffeur services designed for those who value elegance, comfort, and reliability.</p>
-            <a href="#contact" class="btn">Book Your Ride Today</a>
+            <p>From airport transfers to business travel and special occasions, enjoy a considered journey with a professional chauffeur and a vehicle suited to your plans.</p>
+            <div class="hero-actions">
+                <a href="contact.html" class="btn">Request a booking</a>
+                <a href="#fleet" class="btn btn-outline">Explore the fleet</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-strip" aria-label="Our services">
+        <div class="container service-strip-inner">
+            <article class="service-item"><span class="service-number">01</span><div><h2>Airport transfers</h2><p>Plan a smooth arrival or departure.</p></div></article>
+            <article class="service-item"><span class="service-number">02</span><div><h2>Executive travel</h2><p>Arrive prepared for the day ahead.</p></div></article>
+            <article class="service-item"><span class="service-number">03</span><div><h2>Special occasions</h2><p>Make the journey part of the event.</p></div></article>
         </div>
     </section>
 
@@ -391,45 +607,45 @@
         <div class="container">
             <div class="section-header">
                 <h2>Our Fleet</h2>
-                <p>Choose from our premium collection:</p>
+                <p>Tell us which vehicle suits your journey and we’ll confirm availability.</p>
             </div>
 
             <div class="fleet-grid">
                 <!-- Vehicle 1 -->
                 <div class="fleet-card">
-                    <!-- Replace src with your actual car image -->
-                    <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&q=80&w=800" alt="Mercedes Benz C200" class="fleet-img">
+                    <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&q=85&w=900" alt="Luxury Mercedes-Benz sedan" class="fleet-img" loading="lazy">
                     <div class="fleet-info">
                         <h3>Mercedes Benz C200</h3>
                         <p>Private luxury & elegant travel.</p>
+                        <span class="fleet-detail">Ideal for executive and private journeys</span>
                     </div>
                 </div>
 
                 <!-- Vehicle 2 -->
                 <div class="fleet-card">
-                    <!-- Replace src with your actual car image -->
-                    <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&q=80&w=800" alt="Mercedes Benz V300d" class="fleet-img">
+                    <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&q=85&w=900" alt="Premium Mercedes-Benz vehicle" class="fleet-img" loading="lazy">
                     <div class="fleet-info">
                         <h3>Mercedes Benz V300d</h3>
                         <p>The perfect balance of elegance and practicality.</p>
+                        <span class="fleet-detail">Comfort and space for your group</span>
                     </div>
                 </div>
 
                 <!-- Vehicle 3 -->
                 <div class="fleet-card">
-                    <!-- Replace src with your actual car image -->
-                    <img src="https://images.unsplash.com/photo-1617469767053-d3b523a0b982?auto=format&fit=crop&q=80&w=800" alt="Mercedes Benz V300d Executive" class="fleet-img">
+                    <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=85&w=900" alt="Executive vehicle for private hire" class="fleet-img" loading="lazy">
                     <div class="fleet-info">
                         <h3>Mercedes Benz V300d Executive</h3>
                         <p>Prestige redefined. A flagship for business, events, and luxury travel.</p>
+                        <span class="fleet-detail">An elevated option for special occasions</span>
                     </div>
                 </div>
             </div>
 
-            <p class="fleet-notes">50% Deposit Secures Your Booking | Chauffeur Services Available | Terms & Conditions Apply</p>
+            <p class="fleet-notes">Vehicle availability, rates, and booking terms are confirmed when we respond to your enquiry.</p>
             
             <div class="fleet-cta">
-                <a href="#contact" class="btn">Book Your Ride Today</a>
+                <a href="contact.html" class="btn">Ask about availability</a>
             </div>
         </div>
     </section>
@@ -437,12 +653,14 @@
     <!-- About Us Section -->
     <section class="about" id="about">
         <div class="container about-container">
-            <div class="about-image"></div>
+            <img class="about-image" src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=85&w=1200" alt="A chauffeur-driven car ready for a journey" loading="lazy">
             <div class="about-text">
-                <h2>About Us</h2>
-                <p>At MAV Transport Solutions, we believe that luxury travel should be accessible, dignified, and unforgettable.</p>
-                <p>From executive events and airport transfers to weddings and weekend getaways, our fleet is tailored to ensure every journey is first-class comfort, without the first-class price tag.</p>
-                <p>With our professional chauffeurs and seamless booking process, you don't just travel. You arrive.</p>
+                <span class="section-kicker">The MAV experience</span>
+                <h2>Travel with confidence.</h2>
+                <p>MAV Transport Solutions offers private vehicle hire and chauffeur services for journeys where comfort, care, and punctuality matter.</p>
+                <p>Whether you are arranging an airport transfer, a business journey, or transport for a special occasion, share your plans with us and we’ll help you choose the right option.</p>
+                <p>Our team will confirm availability, pricing, and any booking requirements directly with you.</p>
+                <a href="contact.html" class="btn">Talk to our team</a>
             </div>
         </div>
     </section>
@@ -450,52 +668,131 @@
     <!-- CTA Banner -->
     <section class="cta-banner">
         <div class="container">
-            <h2>Whether It’s Your Wedding Day, A Weekend Escape, Or An Important Business Meeting. Travel With MAV, Travel In Style.</h2>
-            <a href="#contact" class="btn btn-black">Book Your Ride Today</a>
+            <h2>Make your next journey feel effortless.</h2>
+            <a href="contact.html" class="btn">Tell us about your trip</a>
+        </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+        <div class="container contact-grid">
+            <div class="contact-heading">
+                <span class="section-kicker">Start a conversation</span>
+                <h2>Request a booking.</h2>
+                <p>Send your journey details and our team can follow up to confirm availability, pricing, and next steps. Your request is not a confirmed booking.</p>
+                <div class="contact-methods">
+                    <div class="contact-method"><span>Email</span><a href="mailto:info@mavtransport.co.za">info@mavtransport.co.za</a></div>
+                    <div class="contact-method"><span>Phone</span><a href="tel:+27810958129">081 095 8129</a></div>
+                </div>
+            </div>
+            <form class="booking-form" id="booking-form">
+                <h3>Journey details</h3>
+                <label>Your name<input name="name" autocomplete="name" required></label>
+                <label>Email address<input name="email" type="email" autocomplete="email" required></label>
+                <label>Phone number<input name="phone" type="tel" autocomplete="tel" required></label>
+                <label>Service
+                    <select name="service" required>
+                        <option value="" disabled selected>Select a service</option>
+                        <option>Airport transfer</option>
+                        <option>Executive travel</option>
+                        <option>Special occasion</option>
+                        <option>Other journey</option>
+                    </select>
+                </label>
+                <label>Travel date<input name="date" type="date" required></label>
+                <label>Preferred vehicle
+                    <select name="vehicle" required>
+                        <option value="" disabled selected>Select a vehicle</option>
+                        <option>Mercedes Benz C200</option>
+                        <option>Mercedes Benz V300d</option>
+                        <option>Mercedes Benz V300d Executive</option>
+                        <option>Please advise</option>
+                    </select>
+                </label>
+                <label class="form-note">Pickup, destination, passenger count, and other details
+                    <textarea name="details" placeholder="Please include your pickup and drop-off locations and any requirements."></textarea>
+                </label>
+                <p class="form-note">Submitting opens your email app with the request details. No booking is confirmed until MAV Transport Solutions replies.</p>
+                <button class="btn form-submit" type="submit">Prepare email enquiry</button>
+            </form>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
+    <footer>
         <div class="container">
             <div class="footer-grid">
                 <!-- Column 1 -->
                 <div class="footer-col">
-                    <div class="logo" style="margin-bottom: 20px;">MAV<span> Transport</span></div>
-                    <p>MAV Transport Solutions offers luxury car hire and chauffeur services designed for those who value elegance, comfort, and reliability.</p>
-                    <div class="social-icons">
-                        <!-- Replace # with your social links -->
-                        <a href="#">📷</a>
-                        <a href="#">🎵</a>
-                        <a href="#">📘</a>
-                    </div>
+                    <a class="brand-logo footer-brand" href="#home" aria-label="MAV Transport Solutions home" style="margin-bottom: 20px;">
+                        <img src="mav-logo.svg" alt="MAV Transport Solutions">
+                    </a>
+                    <p>Private hire and chauffeur services for airport transfers, executive journeys, and special occasions.</p>
                 </div>
 
                 <!-- Column 2 -->
                 <div class="footer-col">
-                    <h4>Quick Links</h4>
+                    <h2>Quick links</h2>
                     <ul>
                         <li><a href="#home">Home</a></li>
-                        <li><a href="#fleet">Our Fleet</a></li>
-                        <li><a href="#about">Our Story</a></li>
-                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="services.html">Our Services</a></li>
+                        <li><a href="story.html">Our Story</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
 
                 <!-- Column 3 -->
                 <div class="footer-col">
-                    <h4>Get In Touch</h4>
-                    <p>info@mavtransport.co.za</p>
-                    <p>084 821 0987</p>
-                    <p>081 705 1977</p>
+                    <h2>Get in touch</h2>
+                    <p><a class="footer-contact-link" href="mailto:info@mavtransport.co.za">info@mavtransport.co.za</a></p>
+                    <p><a class="footer-contact-link" href="tel:+27810958129">081 095 8129</a></p>
+                    
                 </div>
             </div>
 
             <div class="footer-bottom">
-                <p>MAV Transport &copy; 2025 All rights reserved</p>
+                <p>MAV Transport Solutions &copy; <span id="current-year">2026</span>. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
+    <script>
+        const menuButton = document.querySelector('.menu-toggle');
+        const navigation = document.querySelector('#primary-navigation');
+
+        menuButton.addEventListener('click', () => {
+            const isExpanded = menuButton.getAttribute('aria-expanded') === 'true';
+            menuButton.setAttribute('aria-expanded', String(!isExpanded));
+            menuButton.setAttribute('aria-label', isExpanded ? 'Open navigation menu' : 'Close navigation menu');
+            menuButton.textContent = isExpanded ? '☰' : '×';
+            navigation.classList.toggle('is-open', !isExpanded);
+        });
+
+        navigation.addEventListener('click', (event) => {
+            if (event.target.closest('a')) {
+                menuButton.setAttribute('aria-expanded', 'false');
+                menuButton.setAttribute('aria-label', 'Open navigation menu');
+                menuButton.textContent = '☰';
+                navigation.classList.remove('is-open');
+            }
+        });
+
+        document.querySelector('#booking-form').addEventListener('submit', (event) => {
+            event.preventDefault();
+            const formData = new FormData(event.currentTarget);
+            const message = [
+                `Name: ${formData.get('name')}`,
+                `Email: ${formData.get('email')}`,
+                `Phone: ${formData.get('phone')}`,
+                `Service: ${formData.get('service')}`,
+                `Travel date: ${formData.get('date')}`,
+                `Preferred vehicle: ${formData.get('vehicle')}`,
+                `Journey details: ${formData.get('details') || 'Not provided'}`
+            ].join('\n');
+            const subject = encodeURIComponent('MAV Transport booking enquiry');
+            window.location.href = `mailto:info@mavtransport.co.za?subject=${subject}&body=${encodeURIComponent(message)}`;
+        });
+
+        document.querySelector('#current-year').textContent = new Date().getFullYear();
+    </script>
 </body>
 </html>
