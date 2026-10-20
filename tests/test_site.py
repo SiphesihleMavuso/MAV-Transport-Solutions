@@ -62,7 +62,7 @@ class StaticWebsiteTests(unittest.TestCase):
             with self.subTest(page=page):
                 self.assertTrue((ROOT / page).is_file(), f"Missing page: {page}")
 
-    def test_navigation_links_to_all_pages_and_fleet(self) -> None:
+    def test_navigation_links_to_all_pages_without_fleet_link(self) -> None:
         for page in PAGES:
             with self.subTest(page=page):
                 parser = parse_page(page)
@@ -74,12 +74,9 @@ class StaticWebsiteTests(unittest.TestCase):
                     set(PAGES).issubset(destinations),
                     f"Navigation in {page} should link to every page; got {destinations}",
                 )
-                self.assertTrue(
-                    any(
-                        urlsplit(link).fragment == "fleet"
-                        for link in parser.navigation_links
-                    ),
-                    f"Navigation in {page} should link to the fleet section",
+                self.assertFalse(
+                    any("fleet" in link.lower() for link in parser.navigation_links),
+                    f"Navigation in {page} should not contain a Fleet link",
                 )
 
     def test_local_links_and_fragments_resolve(self) -> None:
@@ -125,17 +122,15 @@ class StaticWebsiteTests(unittest.TestCase):
             for alt in parser.image_alts:
                 self.assertTrue(alt and alt.strip(), f"Images in {page} should have descriptive alt text")
 
-    def test_each_page_has_a_real_fleet_anchor(self) -> None:
-        self.assertIn("fleet", parse_page("index.html").ids)
-        for page in ("services.html", "story.html", "contact.html"):
+    def test_footer_links_to_all_pages_without_fleet_link(self) -> None:
+        for page in PAGES:
             parser = parse_page(page)
-            self.assertTrue(
-                any(
-                    urlsplit(link).path == "index.html" and urlsplit(link).fragment == "fleet"
-                    for link in parser.navigation_links
-                ),
-                f"{page} should link to the homepage fleet section",
-            )
+            footer_destinations = {link.lower() for link in parser.footer_links}
+            with self.subTest(page=page):
+                self.assertFalse(
+                    any("fleet" in link for link in footer_destinations),
+                    f"Footer in {page} should not contain a Fleet link",
+                )
 
     def test_homepage_has_required_enquiry_form(self) -> None:
         content = (ROOT / "index.html").read_text(encoding="utf-8")
