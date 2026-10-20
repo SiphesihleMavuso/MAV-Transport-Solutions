@@ -27,6 +27,16 @@ A premium, responsive multi-page website for MAV Transport Solutions, built with
 
 This is a static site and requires no build step or package installation. Open `index.html` directly in a browser, or serve the project folder using a local HTTP server. For example, with Python installed, run `python -m http.server 8080` from the project folder and visit [http://localhost:8080](http://localhost:8080).
 
+## Tests and GitHub Actions
+
+Run the static-site smoke tests locally with:
+
+```text
+python -m unittest discover -s tests -v
+```
+
+GitHub Actions runs the same tests on pushes, pull requests, and manual workflow runs. The checks cover expected pages, cross-page navigation, local links and fragments, shared footer links/logo, image alt text and local assets, and required booking form fields.
+
 ## Before publishing
 
 - Confirm the displayed fleet images correspond to the actual vehicles and that you have permission to use them.
