@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAV Transport Solutions | Luxury Travel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Montserrat:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables for easy color changes */
+        :root {
+            --bg-dark: #050a14;
+            --bg-card: #0d1424;
+            --gold: #d4a373;
+            --gold-hover: #c29262;
+            --white: #ffffff;
+            --text-light: #b3b8c2;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--bg-dark);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background-color: var(--gold);
+            color: #000;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-family: var(--font-body);
+            transition: background 0.3s ease, transform 0.2s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--gold-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-black {
+            background-color: #000;
+            color: var(--white);
+        }
+
+        .btn-black:hover {
+            background-color: #222;
+        }
+
+        /* --- Navigation --- */
+        header {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            padding: 20px 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 24px;
+            font-weight: 800;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--gold);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 30px;
+        }
+
+        .nav-links a {
+            font-size: 14px;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--gold);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            /* Placeholder for background image. Replace URL with your own fleet image */
+            background: linear-gradient(to bottom, rgba(5, 10, 20, 0.7), rgba(5, 10, 20, 0.9)), url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?auto=format&fit=crop&q=80&w=2070') center/cover no-repeat;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero-eyebrow {
+            font-size: 16px;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: var(--text-light);
+            margin-bottom: 30px;
+            max-width: 600px;
+        }
+
+        /* --- Fleet Section --- */
+        .fleet {
+            padding: 80px 0;
+        }
+
+        .section-header {
+            margin-bottom: 50px;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .section-header p {
+            color: var(--gold);
+            font-size: 16px;
+        }
+
+        .fleet-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .fleet-card {
+            background-color: var(--bg-card);
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .fleet-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .fleet-img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            background-color: #1a2235;
+        }
+
+        .fleet-info {
+            padding: 20px;
+        }
+
+        .fleet-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .fleet-info p {
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        .fleet-notes {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: var(--gold);
+            margin-bottom: 30px;
+        }
+
+        .fleet-cta {
+            text-align: center;
+        }
+
+        /* --- About Us Section --- */
+        .about {
+            padding: 80px 0;
+            background-color: #02050c;
+        }
+
+        .about-container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+
+        .about-image {
+            flex: 1;
+            width: 100%;
+            border-radius: 8px;
+            /* Placeholder for about image */
+            background: url('https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&q=80&w=2070') center/cover no-repeat;
+            height: 500px;
+        }
+
+        .about-text {
+            flex: 1;
+        }
+
+        .about-text h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .about-text p {
+            color: var(--text-light);
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+
+        /* --- Call to Action Banner --- */
+        .cta-banner {
+            background-color: var(--gold);
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .cta-banner h2 {
+            color: var(--white);
+            font-size: 2.5rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.3;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: #000000;
+            padding: 60px 0 20px;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1.5fr 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .footer-col p {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col ul li a {
+            color: var(--text-light);
+            font-size: 14px;
+            transition: color 0.3s;
+        }
+
+        .footer-col ul li a:hover {
+            color: var(--gold);
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            color: var(--gold);
+            font-size: 18px;
+        }
+
+        .footer-bottom {
+            text-align: left;
+            padding-top: 20px;
+            border-top: 1px solid #222;
+            font-size: 14px;
+            color: var(--text-light);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 900px) {
+            .about-container {
+                flex-direction: column;
+            }
+            .about-image {
+                height: 300px;
+                width: 100%;
+            }
+            .footer-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none; /* Add a JS menu toggle for production */
+            }
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            .cta-banner h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container nav-container">
+            <div class="logo">MAV<span> Transport</span></div>
+            <nav class="nav-links">
+                <a href="#home">Home</a>
+                <a href="#fleet">Our Fleet</a>
+                <a href="#about">Our Story</a>
+                <a href="#contact">Contact Us</a>
+            </nav>
+            <a href="#contact" class="btn">Book Today</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container hero-content">
+            <span class="hero-eyebrow">Luxury Travel. Unmatched Service.</span>
+            <h1>Luxury Transport,<br>Tailored to You.</h1>
+            <p>MAV Transport Solutions offers luxury car hire and chauffeur services designed for those who value elegance, comfort, and reliability.</p>
+            <a href="#contact" class="btn">Book Your Ride Today</a>
+        </div>
+    </section>
+
+    <!-- Fleet Section -->
+    <section class="fleet" id="fleet">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Fleet</h2>
+                <p>Choose from our premium collection:</p>
+            </div>
+
+            <div class="fleet-grid">
+                <!-- Vehicle 1 -->
+                <div class="fleet-card">
+                    <!-- Replace src with your actual car image -->
+                    <img src="https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?auto=format&fit=crop&q=80&w=800" alt="Mercedes Benz C200" class="fleet-img">
+                    <div class="fleet-info">
+                        <h3>Mercedes Benz C200</h3>
+                        <p>Private luxury & elegant travel.</p>
+                    </div>
+                </div>
+
+                <!-- Vehicle 2 -->
+                <div class="fleet-card">
+                    <!-- Replace src with your actual car image -->
+                    <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&q=80&w=800" alt="Mercedes Benz V300d" class="fleet-img">
+                    <div class="fleet-info">
+                        <h3>Mercedes Benz V300d</h3>
+                        <p>The perfect balance of elegance and practicality.</p>
+                    </div>
+                </div>
+
+                <!-- Vehicle 3 -->
+                <div class="fleet-card">
+                    <!-- Replace src with your actual car image -->
+                    <img src="https://images.unsplash.com/photo-1617469767053-d3b523a0b982?auto=format&fit=crop&q=80&w=800" alt="Mercedes Benz V300d Executive" class="fleet-img">
+                    <div class="fleet-info">
+                        <h3>Mercedes Benz V300d Executive</h3>
+                        <p>Prestige redefined. A flagship for business, events, and luxury travel.</p>
+                    </div>
+                </div>
+            </div>
+
+            <p class="fleet-notes">50% Deposit Secures Your Booking | Chauffeur Services Available | Terms & Conditions Apply</p>
+            
+            <div class="fleet-cta">
+                <a href="#contact" class="btn">Book Your Ride Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section class="about" id="about">
+        <div class="container about-container">
+            <div class="about-image"></div>
+            <div class="about-text">
+                <h2>About Us</h2>
+                <p>At MAV Transport Solutions, we believe that luxury travel should be accessible, dignified, and unforgettable.</p>
+                <p>From executive events and airport transfers to weddings and weekend getaways, our fleet is tailored to ensure every journey is first-class comfort, without the first-class price tag.</p>
+                <p>With our professional chauffeurs and seamless booking process, you don't just travel. You arrive.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Banner -->
+    <section class="cta-banner">
+        <div class="container">
+            <h2>Whether It’s Your Wedding Day, A Weekend Escape, Or An Important Business Meeting. Travel With MAV, Travel In Style.</h2>
+            <a href="#contact" class="btn btn-black">Book Your Ride Today</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Column 1 -->
+                <div class="footer-col">
+                    <div class="logo" style="margin-bottom: 20px;">MAV<span> Transport</span></div>
+                    <p>MAV Transport Solutions offers luxury car hire and chauffeur services designed for those who value elegance, comfort, and reliability.</p>
+                    <div class="social-icons">
+                        <!-- Replace # with your social links -->
+                        <a href="#">📷</a>
+                        <a href="#">🎵</a>
+                        <a href="#">📘</a>
+                    </div>
+                </div>
+
+                <!-- Column 2 -->
+                <div class="footer-col">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#fleet">Our Fleet</a></li>
+                        <li><a href="#about">Our Story</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3 -->
+                <div class="footer-col">
+                    <h4>Get In Touch</h4>
+                    <p>info@mavtransport.co.za</p>
+                    <p>084 821 0987</p>
+                    <p>081 705 1977</p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>MAV Transport &copy; 2025 All rights reserved</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
